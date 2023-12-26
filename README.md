@@ -36,7 +36,7 @@ fun Application.configureCallLogging() {
 
         // Integrates the unique call ID into the Mapped Diagnostic Context (MDC) for logging.
         // This allows the call ID to be included in each log entry, linking logs to specific requests.
-        callIdMdc(name = "id")
+        callIdMdc(name = "callid")
     }
 
     install(CallId) {
