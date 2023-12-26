@@ -23,16 +23,25 @@ implementation("io.ktor:ktor-server-call-id:2.3.7")
 ```kotlin
 fun Application.configureCallLogging() {
 
+    // Set the machine ID.
+    // In this example we set it as 1, but it could be set from the configuration file,
+    // or from an environment variable.
+    // For example:
+    //      val machineId: Int = environment.config.property("ktor.machineId").getString().toInt()
+    //      SnowflakeFactory.setMachine(id = machineId)
+    SnowflakeFactory.setMachine(id = 1)
+
     install(CallLogging) {
         level = Level.INFO
 
         // Integrates the unique call ID into the Mapped Diagnostic Context (MDC) for logging.
         // This allows the call ID to be included in each log entry, linking logs to specific requests.
-        callIdMdc(name = "callid")
+        callIdMdc(name = "id")
     }
 
     install(CallId) {
         // Generates a unique ID for each call. This ID is used for request tracing and logging.
+        // Must be added to the logback.xml file to be included in logs. See %X{id} in logback.xml.
         generate {
             SnowflakeFactory.nextId()
         }
