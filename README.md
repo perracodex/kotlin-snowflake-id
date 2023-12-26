@@ -72,7 +72,7 @@ fun Application.configureCallLogging() {
 ```
 
 Example where a *GET* request has been received. Notice how the ```1iadis897lmgw``` ID was included in the log.
-Each received request will have its own unique ID for all the logs that belong to that concrete call.
+Each received request will have a unique ID shared across all the logs that belong to the same concrete call.
 
 ```
 2023-12-26 21:13:13.366 | [eventProxy] | TRACE | 1iadis897lmgw | io.ktor.server.plugins.ratelimit.RateLimit | Using key=kotlin.Unit and weight=1 for /v1/employees
