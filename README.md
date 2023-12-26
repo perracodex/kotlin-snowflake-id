@@ -9,7 +9,7 @@ implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
 ```
 
-## How to integrate the factory to show snowflake IDs in a Ktor server logs.
+## How to integrate the factory in a Ktor server logs.
 
 1. Add the ktor dependencies for the [CallLogging](https://ktor.io/docs/call-logging.html) and [CallId](https://ktor.io/docs/call-id.html) plugins:
 
