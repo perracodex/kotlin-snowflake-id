@@ -72,9 +72,10 @@ internal object SnowflakeFactory {
     /**
      * Sets the unique machine ID for generating Snowflake IDs.
      * This is the first step required before generating IDs.
+     * This value must be unique for each machine in a distributed system.
      *
-     * @param id The machine ID to use.
-     * @throws IllegalArgumentException If the machine ID is outside the valid range.
+     * @param id The machine ID to use for generating Snowflake IDs.
+     * @throws IllegalArgumentException If the machine ID is outside the allowable range.
      */
     fun setMachine(id: Int) {
         require(id in 0..MAX_MACHINE_ID) { "The Machine ID must be between 0 and $MAX_MACHINE_ID" }
