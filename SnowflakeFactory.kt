@@ -25,6 +25,7 @@ internal object SnowflakeFactory {
 
     // The unique machine ID used for generating Snowflake IDs.
     // Must be set before generating IDs.
+    // This value must be unique for each machine in a distributed system.
     private var machineId: Int? = null
 
     // The base used for converting the generated ID to a compact alphanumeric string.
