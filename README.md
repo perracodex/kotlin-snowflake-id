@@ -1,6 +1,6 @@
-# Snowflake in Kotlin
+# Snowflake in Kotlin for Ktor.
 
-A [SnowflakeFactory](https://github.com/perracolabs/Snowflake/blob/main/SnowflakeFactory.kt) to generate unique snowflake IDs in Kotlin. Suitable for ktor and distributed systems.
+A [SnowflakeFactory](https://github.com/perracolabs/Snowflake/blob/main/SnowflakeFactory.kt) to generate unique snowflake IDs in Kotlin. Suitable for [Ktor](https://ktor.io/) and distributed systems.
 
 For the ID reverse parser, [Kotlinx](https://github.com/Kotlin/kotlinx.serialization) is used for serializaiton and [Date](https://github.com/Kotlin/kotlinx-datetime) types. So, the next dependencies must be included unless you ammed the code to use your own serialization solution and concrete Date types:
 
@@ -9,7 +9,7 @@ implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
 ```
 
-## How to integrate the factory to show snowflake IDs in your server logs.
+## How to integrate the factory to show snowflake IDs in a Ktor server logs.
 
 1. Add the ktor dependencies for the [CallLogging](https://ktor.io/docs/call-logging.html) and [CallId](https://ktor.io/docs/call-id.html) plugins:
 
@@ -62,7 +62,7 @@ fun Application.configureCallLogging() {
 </configuration>
 ```
 
-Example where a GET request has been received. Notice how the '1iadis897lmgw' snowflake ID as been included in the traces:
+Example where a *GET* request has been received. Notice how the ```1iadis897lmgw``` ID was included in the log:
 
 ```
 2023-12-26 21:13:13.366 | [eventProxy] | TRACE | 1iadis897lmgw | io.ktor.server.plugins.ratelimit.RateLimit | Using key=kotlin.Unit and weight=1 for /v1/employees
@@ -72,7 +72,7 @@ Example where a GET request has been received. Notice how the '1iadis897lmgw' sn
 2023-12-26 21:13:13.528 | [eventProxy] | INFO  | 1iadis897lmgw | Application | Call Metric: [127.0.0.1] GET - /v1/employees - 170ms
 ```
 
-If the ```1iadis897lmgw```ID is parsed back, it will give its concrete detailed information:
+If the ```1iadis897lmgw``` ID is parsed back, it will give its concrete detailed information:
 ```json
 {
     "machineId": 1,
