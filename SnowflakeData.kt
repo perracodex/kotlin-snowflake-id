@@ -4,7 +4,7 @@
  * For a copy, see <https://opensource.org/licenses/MIT>
  */
 
-package com.kcrud.admin.env.security.snowflake
+package com.perracolabs.utils
 
 import kotlinx.datetime.LocalDateTime
 import kotlinx.serialization.Serializable
