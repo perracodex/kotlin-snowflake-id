@@ -166,6 +166,6 @@ internal object SnowflakeFactory {
      */
     private fun newTimestamp(): Long {
         val nanoTimeDiff: Long = System.nanoTime() - nanoTimeStart
-        return timestampEpoch + TimeUnit.NANOSECONDS.toMillis(nanoTimeDiff)
+        return timestampEpoch + nanoTimeDiff.nanoseconds.inWholeMilliseconds
     }
 }
