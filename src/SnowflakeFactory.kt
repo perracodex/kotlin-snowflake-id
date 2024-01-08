@@ -10,7 +10,8 @@ import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
-import java.util.concurrent.TimeUnit
+
+import kotlin.time.Duration.Companion.nanoseconds
 
 /**
  * Generates unique identifiers suitable for distributed systems based
