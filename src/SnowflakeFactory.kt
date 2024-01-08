@@ -4,7 +4,7 @@
  * For a copy, see <https://opensource.org/licenses/MIT>
  */
 
-package com.perracolabs.utils
+package com.perraco.utils
 
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
