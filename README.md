@@ -1,4 +1,4 @@
-# Snowflake IDs in Kotlin for Ktor.
+# Snowflake IDs for Ktor.
 
 A [SnowflakeFactory](https://github.com/perracodex/Kotlin-Snowflake-ID/blob/main/src/SnowflakeFactory.kt) to generate unique snowflake IDs in Kotlin. Suitable for [Ktor](https://ktor.io/) and distributed systems.
 
