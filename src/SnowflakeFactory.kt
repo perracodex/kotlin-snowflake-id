@@ -120,8 +120,9 @@ object SnowflakeFactory {
         }
 
         // Verify the machine ID is set. If not defined, then log a warning and use a default value.
-        machineId ?: run {
+        val contextMachineId: Int = machineId ?: run {
             machineId = NO_MACHINE_ID
+            return@run NO_MACHINE_ID
         }
 
         // If it's a new millisecond, reset the sequence number.
@@ -143,7 +144,7 @@ object SnowflakeFactory {
 
         // Construct the ID.
         val id: Long = (lastTimestampMs shl (MACHINE_ID_BITS + SEQUENCE_BITS)) or
-                (machineId!!.toLong() shl SEQUENCE_BITS) or
+                (contextMachineId.toLong() shl SEQUENCE_BITS) or
                 sequence
 
         return id.toString(radix = ALPHA_NUMERIC_BASE)
