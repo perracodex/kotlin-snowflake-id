@@ -19,7 +19,7 @@ import kotlin.time.Duration.Companion.nanoseconds
  *
  * See: [Snowflake ID](https://en.wikipedia.org/wiki/Snowflake_ID)
  */
-internal object SnowflakeFactory {
+object SnowflakeFactory {
 
     /**
      * The base used for converting the generated ID to a compact alphanumeric string.
