@@ -2,7 +2,7 @@
 
 A [SnowflakeFactory](https://github.com/perracodex/Kotlin-Snowflake-ID/blob/main/src/SnowflakeFactory.kt) to generate unique snowflake IDs in Kotlin. Suitable for [Ktor](https://ktor.io/) and distributed systems.
 
-For the ID reverse parser, [Kotlinx](https://github.com/Kotlin/kotlinx.serialization) is used for serializaiton and [Date](https://github.com/Kotlin/kotlinx-datetime) types. So, the next dependencies must be included unless you ammed the code to use your own serialization solution and concrete Date types:
+For the ID reverse parser, [Kotlinx](https://github.com/Kotlin/kotlinx.serialization) is used for both serializaiton and [Date](https://github.com/Kotlin/kotlinx-datetime) types. So, the next dependencies must be included unless you ammed the code to use your own serialization solution and concrete Date types:
 
 ```kts
 implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
